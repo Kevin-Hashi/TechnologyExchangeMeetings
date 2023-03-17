@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.975" />
+
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/connect_button"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1" />
+
+    <TextView
+        android:id="@+id/status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/connect_button"
+        app:layout_constraintTop_toBottomOf="@id/text_view" />
+
+    <SeekBar
+        android:id="@+id/seek_bar_1"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:max="5"
+        android:min="-5"
+        android:thumb="@drawable/ic_l"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1" />
+
+    <SeekBar
+        android:id="@+id/seek_bar_2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:max="5"
+        android:min="-5"
+        android:thumb="@drawable/ic_r"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline_2"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline_2" />
+
+    <ScrollView
+        android:id="@+id/systemGroupScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/touchView">
+
+        <RadioGroup
+            android:id="@+id/controlSystemGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/panelControl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="パネル" />
+
+            <RadioButton
+                android:id="@+id/seekControl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="スライドバー" />
+        </RadioGroup>
+    </ScrollView>
+
+
+    <jp.gr.java_conf.hashiguchi_homemade.robot_bt.CustomImageView
+        android:id="@+id/touchView"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/border"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/connect_button" />
+
+    <ImageView
+        android:id="@+id/origin_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/circle"
+        android:src="@drawable/ic_circle"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/select_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/systemGroupScrollView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/move_origin" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/o_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fixed_origin" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/vertical_guideline_1"
+        app:layout_constraintRight_toLeftOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/select_origin">
+
+        <jp.gr.java_conf.hashiguchi_homemade.robot_bt.RadioButtonTableLayout
+            android:id="@+id/bias_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/bias_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/linear" />
+
+                <RadioButton
+                    android:id="@+id/bias_sgm_ln9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sgm_ln9" />
+
+                <RadioButton
+                    android:id="@+id/bias_sgm_ln199"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sgm_ln199" />
+
+                <RadioButton
+                    android:id="@+id/bias_lSgm_ln99"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/l_sgm_ln99" />
+
+                <RadioButton
+                    android:id="@+id/bias_lSgm_eP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/l_sgm_e_p2" />
+            </TableRow>
+
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/bias_frac1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frac1" />
+
+                <RadioButton
+                    android:id="@+id/bias_frac2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frac2" />
+
+                <RadioButton
+                    android:id="@+id/bias_frac_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frac_e" />
+
+                <RadioButton
+                    android:id="@+id/bias_frac4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frac4" />
+            </TableRow>
+        </jp.gr.java_conf.hashiguchi_homemade.robot_bt.RadioButtonTableLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

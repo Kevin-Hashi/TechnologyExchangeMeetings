@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Robot_BT</string>
+    <string name="move_origin">移動式原点</string>
+    <string name="fixed_origin">固定式原点</string>
+    <string name="frac4">frac4</string>
+    <string name="frac_e">frac e</string>
+    <string name="frac2">frac2</string>
+    <string name="linear">Linear</string>
+    <string name="sgm_ln9">sgmLn9</string>
+    <string name="sgm_ln199">sgmLn199</string>
+    <string name="l_sgm_ln99">lSgmLn99</string>
+    <string name="l_sgm_e_p2">lSgmEP2</string>
+    <string name="frac1">frac1</string>
+    <string name="circle">circle</string>
+    <string name="connect">接続</string>
+</resources>
