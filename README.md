@@ -2,9 +2,9 @@
 
 2023/03/18に行われた四校技術交換会において、浦和高校の使用した技術の一部を公開、説明するものである。
 
-Bluetoothのスレーブとして使用するプログラム : ESP32_DDR_merged
-Bluetoothのマスターとして使用するプログラム : SerialToSerialBTM
-Androidをマスターとして使用するプログラム   : robot_bt
+- Bluetoothのスレーブとして使用するプログラム : ESP32_DDR_merged
+- Bluetoothのマスターとして使用するプログラム : SerialToSerialBTM
+- Androidをマスターとして使用するプログラム   : robot_bt
 
 ESP32の解説文書
 
